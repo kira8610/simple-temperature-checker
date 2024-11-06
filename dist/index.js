@@ -18,6 +18,6 @@ tempForm.addEventListener("submit", event => {
             message.textContent = "It's cold";
             break;
     }
-}
+})
 
 // A switch statement in JavaScript compares the value of the expression against the values of each case. Since switch doesn't support range conditions directly, you have to check for individual values or patterns. For checking ranges (like temp > 30, temp >= 20 && temp <= 30, etc.), using if/else is the better approach.
