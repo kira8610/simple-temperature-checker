@@ -7,22 +7,17 @@ tempForm.addEventListener("submit", event => {
 
     const temp = Number(currentTemp.value);
 
-    if (temp > 30) {
-        message.textContent = "It's hot";
+    switch (true) {
+        case (temp > 30):
+            message.textContent = "It's hot";
+            break;
+        case (temp >= 20 && temp <= 30):
+            message.textContent = "It's warm";
+            break;
+        case (temp < 20):
+            message.textContent = "It's cold";
+            break;
     }
-    else if (temp >= 20 && temp <= 30) {
-        message.textContent = "It's warm";
-    }
-    
-    else if (temp < 20) {
-        message.textContent = "It's cold";
-    }
-})
+}
 
-// NOTE: In JavaScript, comparisons like 20 <= temp <= 30 don’t work as expected because JavaScript evaluates them from left to right.
-
-// Here's what happens:
-
-// First, it evaluates 20 <= temp, which returns a boolean (either true or false).
-// Then, it compares that boolean value (true or false) to 30, which is not the intended logic.
-
+// A switch statement in JavaScript compares the value of the expression against the values of each case. Since switch doesn't support range conditions directly, you have to check for individual values or patterns. For checking ranges (like temp > 30, temp >= 20 && temp <= 30, etc.), using if/else is the better approach.
